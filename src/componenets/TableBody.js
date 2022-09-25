@@ -7,7 +7,6 @@ const TableBody = ({ tableData, columns }) => {
   const theme = useTheme();
 
   const tableBody = tableData.map((data) => {
-    console.log(theme.colors.table[data.status].light);
     const dot = <S.Dot color={theme.colors.table[data.status].main} />;
     const rowsData = columns.map(({ accessor }) => {
       let tData;
