@@ -11,7 +11,7 @@ const TableBody = ({ tableData, columns }) => {
     const rowsData = columns.map(({ accessor }) => {
       let tData;
       switch (accessor) {
-        case 'roi' || 'hedge':
+        case 'roi':
           tData = `${data[accessor]} %`;
           break;
         case 'hedge':
