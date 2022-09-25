@@ -24,7 +24,7 @@ export const data = [
   {
     id: 3,
     name: 'Tokenhub.club',
-    status: 'geen',
+    status: 'green',
     type: 'THC',
     conditions: 'x2,1 years',
     volume: 120000,

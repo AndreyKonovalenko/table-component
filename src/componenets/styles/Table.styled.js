@@ -13,6 +13,10 @@ export const TH = styled.th`
   text-align: left;
 `;
 
+export const TR = styled.tr`
+  background-color: ${(props) => props.color};
+`;
+
 export const TD = styled.td`
   border-top: 1px solid #ddd;
   padding: 8px 20px;
