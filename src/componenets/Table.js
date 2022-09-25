@@ -1,8 +1,11 @@
-const Table = () => {
+import * as S from './styles/Table.styled';
+import TableHead from './TableHead';
+
+const Table = ({ columns }) => {
   return (
-    <>
-      <h1>Hello world!</h1>
-    </>
+    <S.Table>
+      <TableHead columns={columns} />
+    </S.Table>
   );
 };
 
