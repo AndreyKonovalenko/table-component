@@ -3,8 +3,18 @@ import { colorSelector } from '../utils/utils';
 const TableBody = ({ tableData, columns }) => {
   const tableBody = tableData.map((data) => {
     const cellData = columns.map(({ accessor }) => {
-      const tData = data[accessor];
-      return <S.TD key={accessor}>{tData}</S.TD>;
+      const dot = <S.Dot color={data.status} />;
+      const tData =
+        accessor === 'roi' || accessor === 'hedge'
+          ? `${data[accessor]} %`
+          : data[accessor];
+
+      return (
+        <S.TD key={accessor}>
+          {dot}
+          {tData}
+        </S.TD>
+      );
     });
 
     return (

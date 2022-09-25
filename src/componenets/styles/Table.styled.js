@@ -25,3 +25,13 @@ export const TD = styled.td`
 export const TBoby = styled.tbody`
   background: #fff;
 `;
+
+export const Dot = styled.span`
+  background-color: ${(props) => props.color};
+  border-radius: 50%;
+  height: 1rem;
+  margin-right: 5px;
+  width: 1rem;
+  vertical-align: middle;
+  display: inline-block;
+`;
