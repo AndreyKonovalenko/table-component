@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const Table = styled.table`
   width: 100%;
-  border-spacing: 0;
+  border-collapse: separate;
+  border-spacing: 0 5px;
 `;
 
 export const TH = styled.th`
   background: #fff;
   padding: 8px 20px;
-  border-bottom: 1px solid #1a1a1a;
   font-weight: bold;
   text-align: left;
 `;
@@ -18,7 +18,6 @@ export const TR = styled.tr`
 `;
 
 export const TD = styled.td`
-  border-top: 1px solid #ddd;
   padding: 25px 20px;
 `;
 
