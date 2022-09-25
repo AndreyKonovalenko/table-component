@@ -3,30 +3,31 @@ import GlobalStyles from './componenets/styles/GlobalStyles';
 import * as S from './componenets/styles/Layout.styled';
 import Table from './componenets/Table';
 import theme from './theme/theme';
+import { data } from './__mocks__/data';
 
 const columns = [
   {
     label: 'Project',
-    accessor: 'poroject',
+    accessor: 'name',
     sortable: true,
     sortbyOrder: 'desc',
   },
   {
     label: 'Token type',
-    accessor: 'token_type',
+    accessor: 'type',
     sortable: true,
     sortbyOrder: 'desc',
   },
   {
-    label: 'Condintions',
-    accessor: 'condititions',
+    label: 'Conditions',
+    accessor: 'conditions',
     sortable: true,
     sortbyOrder: 'desc',
   },
   { label: 'Volume', accessor: 'volume', sortable: true },
-  { label: 'RIO', accessor: 'rio', sortable: false },
-  { label: 'Free float', accessor: 'free float', sortable: false },
-  { label: 'Insurance hadge', accessor: 'insurance_hadge', sortable: false },
+  { label: 'ROI', accessor: 'roi', sortable: false },
+  { label: 'Free float', accessor: 'free', sortable: false },
+  { label: 'Insurance hadge', accessor: 'hedge', sortable: false },
 ];
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <S.Layout>
-        <Table columns={columns} />
+        <Table columns={columns} tableData={data} />
       </S.Layout>
     </ThemeProvider>
   );

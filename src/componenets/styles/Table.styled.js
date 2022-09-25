@@ -19,5 +19,5 @@ export const TD = styled.td`
 `;
 
 export const TBoby = styled.tbody`
-  background: #eff0f0;
+  background: #fff;
 `;
