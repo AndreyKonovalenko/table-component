@@ -1,25 +1,43 @@
+import { useTheme } from 'styled-components';
 import * as S from './styles/Table.styled';
-import { colorSelector } from '../utils/utils';
+
+import { numberFormatter } from '../utils/utils';
+
 const TableBody = ({ tableData, columns }) => {
+  const theme = useTheme();
+
   const tableBody = tableData.map((data) => {
-    const cellData = columns.map(({ accessor }) => {
-      const dot = <S.Dot color={data.status} />;
-      const tData =
-        accessor === 'roi' || accessor === 'hedge'
-          ? `${data[accessor]} %`
-          : data[accessor];
+    console.log(theme.colors.table[data.status].light);
+    const dot = <S.Dot color={theme.colors.table[data.status].main} />;
+    const rowsData = columns.map(({ accessor }) => {
+      let tData;
+      switch (accessor) {
+        case 'roi' || 'hedge':
+          tData = `${data[accessor]} %`;
+          break;
+        case 'hedge':
+          tData = `${data[accessor]} %`;
+          break;
+        case 'volume':
+          tData = `$ ${numberFormatter(data[accessor])}`;
+          break;
+        default:
+          tData = data[accessor];
+      }
 
       return (
         <S.TD key={accessor}>
-          {dot}
-          {tData}
+          <S.FlexContainer>
+            {accessor === 'name' && dot}
+            {tData}
+          </S.FlexContainer>
         </S.TD>
       );
     });
 
     return (
-      <S.TR color={colorSelector(data.status)} key={data.id}>
-        {cellData}
+      <S.TR color={theme.colors.table[data.status].light} key={data.id}>
+        {rowsData}
       </S.TR>
     );
   });

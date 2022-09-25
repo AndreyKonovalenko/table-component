@@ -7,7 +7,7 @@ export const Table = styled.table`
 
 export const TH = styled.th`
   background: #fff;
-  padding: 8px 10px;
+  padding: 8px 20px;
   border-bottom: 1px solid #1a1a1a;
   font-weight: bold;
   text-align: left;
@@ -19,19 +19,23 @@ export const TR = styled.tr`
 
 export const TD = styled.td`
   border-top: 1px solid #ddd;
-  padding: 8px 20px;
+  padding: 25px 20px;
 `;
 
 export const TBoby = styled.tbody`
   background: #fff;
 `;
 
-export const Dot = styled.span`
+export const Dot = styled.div`
   background-color: ${(props) => props.color};
   border-radius: 50%;
-  height: 1rem;
-  margin-right: 5px;
-  width: 1rem;
-  vertical-align: middle;
-  display: inline-block;
+  margin-right: 10px;
+  height: 14px;
+  width: 14px;
+`;
+
+export const FlexContainer = styled.div`
+  display: flex;
+  justify-content: row;
+  align-items: center;
 `;
