@@ -35,7 +35,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <S.Layout>
-        <Table columns={columns} tableData={data} />
+        <Table columns={columns} data={data} />
       </S.Layout>
     </ThemeProvider>
   );
