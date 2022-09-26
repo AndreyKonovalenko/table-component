@@ -28,7 +28,7 @@ function getDefaultSorting(defaultTableData, columns) {
 export const useSortableTable = (data, columns) => {
   const [tableData, setTableData] = useState(getDefaultSorting(data, columns));
 
-  const handleSorting = (sortField, sortOrder) => {
+  const handleFiltering = (sortField, sortOrder) => {
     if (sortField) {
       const sorted = [...tableData].sort((a, b) => {
         if (a[sortField] === null) return 1;
@@ -44,5 +44,5 @@ export const useSortableTable = (data, columns) => {
     }
   };
 
-  return [tableData, handleSorting];
+  return [tableData, handleFiltering];
 };
