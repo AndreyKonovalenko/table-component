@@ -25,23 +25,12 @@ function getDefaultSorting(defaultTableData, columns) {
   return sorted;
 }
 
-export const useSortableTable = (data, columns) => {
-  const [tableData, setTableData] = useState(getDefaultSorting(data, columns));
+export const useFilterableTable = (data) => {
+  const [tableData, setTableData] = useState(data);
 
-  const handleFiltering = (sortField, sortOrder) => {
-    if (sortField) {
-      const sorted = [...tableData].sort((a, b) => {
-        if (a[sortField] === null) return 1;
-        if (b[sortField] === null) return -1;
-        if (a[sortField] === null && b[sortField] === null) return 0;
-        return (
-          a[sortField].toString().localeCompare(b[sortField].toString(), 'en', {
-            numeric: true,
-          }) * (sortOrder === 'asc' ? 1 : -1)
-        );
-      });
-      setTableData(sorted);
-    }
+  const handleFiltering = (accessor, value) => {
+    const filtered = tableData.filter((element) => element[accessor] === value);
+    setTableData(filtered);
   };
 
   return [tableData, handleFiltering];

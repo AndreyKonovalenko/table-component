@@ -7,18 +7,17 @@ const TableHead = ({ columns, tableData, handleFiltering }) => {
   const tableHead = columns.map(({ label, accessor }) => {
     return (
       <S.TH key={nanoid()}>
-        {accessor === 'name' ? (
+        {accessor === 'name' || accessor === 'type' ? (
           <Select
-            accessor={'status'}
-            data={selectorArray(tableData, 'status')}
+            accessor={accessor === 'name' ? ' status' : accessor}
+            data={selectorArray(
+              tableData,
+              accessor === 'name' ? ' status' : accessor
+            )}
+            handleFiltering={handleFiltering}
           />
         ) : null}
-        {accessor === 'type' ? (
-          <Select
-            accessor={accessor}
-            data={selectorArray(tableData, accessor)}
-          />
-        ) : null}
+
         {label}
       </S.TH>
     );
