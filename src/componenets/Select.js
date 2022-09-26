@@ -3,11 +3,16 @@ import { nanoid } from 'nanoid';
 
 const Select = ({ data }) => {
   const [selectedOption, setSelectedOption] = useState('All');
+  const hadleChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
   const option = data.map((element) => (
-    <option key={nanoid()}>{element}</option>
+    <option key={nanoid()} value={element}>
+      {element}
+    </option>
   ));
   return (
-    <select defaultValue={selectedOption} onChange={setSelectedOption}>
+    <select value={selectedOption} onChange={hadleChange}>
       {option}
     </select>
   );
