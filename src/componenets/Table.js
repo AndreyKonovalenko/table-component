@@ -5,7 +5,7 @@ import TableBody from './TableBody';
 const Table = ({ columns, tableData }) => {
   return (
     <S.Table>
-      <TableHead columns={columns} />
+      <TableHead columns={columns} tableData={tableData} />
       <TableBody columns={columns} tableData={tableData} />
     </S.Table>
   );
