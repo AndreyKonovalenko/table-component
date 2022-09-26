@@ -27,7 +27,6 @@ function getDefaultSorting(defaultTableData, columns) {
 
 export const useFilterableTable = (data) => {
   const [tableData, setTableData] = useState(data);
-
   const handleFiltering = (accessor, value) => {
     const filtered = tableData.filter((element) => element[accessor] === value);
     setTableData(filtered);

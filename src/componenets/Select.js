@@ -5,8 +5,7 @@ const Select = ({ accessor, data, handleFiltering }) => {
   const [selectedOption, setSelectedOption] = useState('All');
   const hadleChange = (event) => {
     setSelectedOption(event.target.value);
-    console.log(handleFiltering);
-    handleFiltering(accessor, event.target.valuea);
+    handleFiltering(accessor, event.target.value);
   };
   const option = data.map((element) => (
     <option key={nanoid()} value={element}>

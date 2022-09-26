@@ -9,10 +9,10 @@ const TableHead = ({ columns, tableData, handleFiltering }) => {
       <S.TH key={nanoid()}>
         {accessor === 'name' || accessor === 'type' ? (
           <Select
-            accessor={accessor === 'name' ? ' status' : accessor}
+            accessor={accessor === 'name' ? 'status' : accessor}
             data={selectorArray(
               tableData,
-              accessor === 'name' ? ' status' : accessor
+              accessor === 'name' ? 'status' : accessor
             )}
             handleFiltering={handleFiltering}
           />
@@ -22,7 +22,6 @@ const TableHead = ({ columns, tableData, handleFiltering }) => {
       </S.TH>
     );
   });
-  console.log(tableHead);
   return (
     <thead>
       <tr>{tableHead}</tr>

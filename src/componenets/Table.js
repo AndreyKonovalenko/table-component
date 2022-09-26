@@ -5,13 +5,12 @@ import { useFilterableTable } from '../hooks/useFilterableTable';
 
 const Table = ({ data, columns }) => {
   const [tableData, handleFiltering] = useFilterableTable(data);
-  console.log(handleFiltering);
 
   return (
     <S.Table>
       <TableHead
         columns={columns}
-        tableData={tableData}
+        tableData={data}
         handleFiltering={handleFiltering}
       />
       <TableBody columns={columns} tableData={tableData} />
