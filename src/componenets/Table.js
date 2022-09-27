@@ -10,7 +10,7 @@ const Table = ({ data, columns }) => {
     <S.Table>
       <TableHead
         columns={columns}
-        tableData={tableData}
+        tableData={data}
         handleFiltering={handleFiltering}
         filters={filters}
       />
