@@ -18,7 +18,9 @@ const TableHead = ({ columns, tableData, handleFiltering, filters }) => {
             filter={filters[accessor === 'name' ? 'status' : accessor]}
           />
         ) : null}
-
+        {accessor === 'name' || accessor === 'type' ? (
+          <S.Span>{filters[accessor === 'name' ? 'status' : accessor]}</S.Span>
+        ) : null}
         {label}
       </S.TH>
     );

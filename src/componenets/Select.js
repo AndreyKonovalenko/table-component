@@ -7,7 +7,7 @@ const Select = ({ accessor, data, handleFiltering, filter }) => {
   };
 
   const option = data.map((element) => (
-    <option key={nanoid()} value={element}>
+    <option style={{ backgroundColor: 'white' }} key={nanoid()} value={element}>
       {element}
     </option>
   ));

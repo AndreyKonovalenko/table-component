@@ -16,6 +16,15 @@ export const THEAD = styled.thead`
   color: ${({ theme }) => theme.colors.text.onHeader};
 `;
 
+export const Span = styled.span`
+  background: ${({ theme }) => theme.colors.selectionFieldBackground};
+  color: ${({ theme }) => theme.colors.text.onSelect};
+  padding: 2px 5px;
+  margin-right: 3px;
+  border-radius: 3px;
+  border: none;
+`;
+
 export const TR = styled.tr`
   background-color: ${(props) => props.color};
 `;
@@ -25,6 +34,7 @@ export const TD = styled.td`
 `;
 
 export const TBoby = styled.tbody`
+  font-weight: bold;
   background: #fff;
 `;
 

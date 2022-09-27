@@ -28,7 +28,6 @@ function getDefaultSorting(defaultTableData, columns) {
 export const useTableContorls = (data) => {
   const [tableData, setTableData] = useState(data);
   const [filters, setFilters] = useState({ status: 'All', type: 'All' });
-
   const handleFiltering = (accessor, value) => {
     if (value === 'All') {
       setTableData(data);
@@ -40,7 +39,5 @@ export const useTableContorls = (data) => {
       setFilters({ ...filters, [accessor]: value });
     }
   };
-  console.log(filters);
-
   return [tableData, filters, handleFiltering];
 };
