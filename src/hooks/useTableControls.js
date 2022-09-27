@@ -25,13 +25,22 @@ function getDefaultSorting(defaultTableData, columns) {
   return sorted;
 }
 
-export const useFilterableTable = (data) => {
+export const useTableContorls = (data) => {
   const [tableData, setTableData] = useState(data);
-  const [filteredData, setFilteredData] = useState(tableData);
+  const [filters, setFilters] = useState({ status: 'All', type: 'All' });
   const handleFiltering = (accessor, value) => {
-    const filtered = tableData.filter((element) => element[accessor] === value);
-    setFilteredData(filtered);
+    setFilters({ ...filters, [accessor]: value });
+    // if (value === 'All') {
+    //   setTableData(data);
+    // }
+    if (value !== 'All') {
+      const filtered = tableData.filter(
+        (element) => element[accessor] === value
+      );
+      setTableData(filtered);
+    }
   };
+  console.log(filters);
 
-  return [tableData, filteredData, handleFiltering];
+  return [tableData, filters, handleFiltering];
 };

@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
 import { nanoid } from 'nanoid';
+import * as S from './styles/Select.styled';
 
-const Select = ({ accessor, data, handleFiltering }) => {
-  const [selectedOption, setSelectedOption] = useState('All');
-  const hadleChange = (event) => {
-    setSelectedOption(event.target.value);
+const Select = ({ accessor, data, handleFiltering, filter }) => {
+  const handleChange = (event) => {
     handleFiltering(accessor, event.target.value);
   };
+
   const option = data.map((element) => (
     <option key={nanoid()} value={element}>
       {element}
     </option>
   ));
   return (
-    <select value={selectedOption} onChange={hadleChange}>
+    <S.Select value={filter} onChange={handleChange}>
       {option}
-    </select>
+    </S.Select>
   );
 };
 export default Select;

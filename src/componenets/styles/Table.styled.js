@@ -7,10 +7,13 @@ export const Table = styled.table`
 `;
 
 export const TH = styled.th`
-  background: #fff;
-  padding: 8px 20px;
   font-weight: bold;
+  padding: 8px 20px;
   text-align: left;
+`;
+
+export const THEAD = styled.thead`
+  color: ${({ theme }) => theme.colors.text.onHeader};
 `;
 
 export const TR = styled.tr`

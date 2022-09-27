@@ -3,7 +3,7 @@ import * as S from './styles/Table.styled';
 import Select from './Select';
 import { selectorArray } from '../utils/utils';
 
-const TableHead = ({ columns, tableData, handleFiltering }) => {
+const TableHead = ({ columns, tableData, handleFiltering, filters }) => {
   const tableHead = columns.map(({ label, accessor }) => {
     return (
       <S.TH key={nanoid()}>
@@ -15,6 +15,7 @@ const TableHead = ({ columns, tableData, handleFiltering }) => {
               accessor === 'name' ? 'status' : accessor
             )}
             handleFiltering={handleFiltering}
+            filter={filters[accessor === 'name' ? 'status' : accessor]}
           />
         ) : null}
 
@@ -23,9 +24,9 @@ const TableHead = ({ columns, tableData, handleFiltering }) => {
     );
   });
   return (
-    <thead>
+    <S.THEAD>
       <tr>{tableHead}</tr>
-    </thead>
+    </S.THEAD>
   );
 };
 

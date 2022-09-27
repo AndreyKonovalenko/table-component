@@ -1,6 +1,7 @@
 const theme = {
   colors: {
     background: '#FFFFFF',
+    selectionFieldBackground: '#98999E',
     table: {
       red: {
         main: '#f55d48',
@@ -17,8 +18,9 @@ const theme = {
     },
     text: {
       main: '#000000',
-      onHeader: '#383f4d',
-      onButton: '##32CA8',
+      onHeader: '#98999E',
+      onButton: '#32CA8',
+      onSelect: '#FFFFFF',
     },
   },
   mobile: '768px',
