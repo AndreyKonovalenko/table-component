@@ -4,7 +4,7 @@ import TableBody from './TableBody';
 import { useFilterableTable } from '../hooks/useFilterableTable';
 
 const Table = ({ data, columns }) => {
-  const [tableData, handleFiltering] = useFilterableTable(data);
+  const [tableData, filteredData, handleFiltering] = useFilterableTable(data);
 
   return (
     <S.Table>
@@ -13,7 +13,7 @@ const Table = ({ data, columns }) => {
         tableData={data}
         handleFiltering={handleFiltering}
       />
-      <TableBody columns={columns} tableData={tableData} />
+      <TableBody columns={columns} tableData={filteredData} />
     </S.Table>
   );
 };
