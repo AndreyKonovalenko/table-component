@@ -12,6 +12,12 @@ export const TH = styled.th`
   text-align: left;
 `;
 
+export const THContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
 export const THEAD = styled.thead`
   color: ${({ theme }) => theme.colors.text.onHeader};
 `;
