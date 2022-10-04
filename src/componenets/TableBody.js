@@ -33,6 +33,7 @@ const TableBody = ({ tableData, columns }) => {
           <S.FlexContainer>
             {accessor === 'name' && dot}
             {tData}
+            {accessor === 'button' && <S.Button>Buy</S.Button>}
           </S.FlexContainer>
         </S.TD>
       );

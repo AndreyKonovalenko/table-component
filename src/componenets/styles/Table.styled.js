@@ -58,3 +58,9 @@ export const FlexContainer = styled.div`
   justify-content: row;
   align-items: center;
 `;
+
+export const Button = styled.button`
+  border-radius: 15%;
+  width: 100%;
+  padding: 10px 15px;
+`;

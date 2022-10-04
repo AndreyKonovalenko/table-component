@@ -26,6 +26,7 @@ const columns = [
   { label: 'ROI', accessor: 'roi', sortable: false },
   { label: 'Free float', accessor: 'free', sortable: false },
   { label: 'Insurance hadge', accessor: 'hedge', sortable: false },
+  { label: '', accessor: 'button', sortable: false },
 ];
 
 function App() {
