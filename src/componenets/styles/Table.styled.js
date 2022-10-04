@@ -4,11 +4,12 @@ export const Table = styled.table`
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 5px;
+  table-layout: auto;
 `;
 
 export const TH = styled.th`
   font-weight: bold;
-  padding: 8px 20px;
+  padding: 8px 0px 8px 20px;
   text-align: left;
 `;
 
@@ -37,7 +38,8 @@ export const TR = styled.tr`
 `;
 
 export const TD = styled.td`
-  padding: 25px 20px;
+  padding: 20px 0px 20px 20px;
+  text-align: left;
 `;
 
 export const TBoby = styled.tbody`
@@ -63,4 +65,5 @@ export const Button = styled.button`
   border-radius: 15%;
   width: 100%;
   padding: 10px 15px;
+  margin-right: 20px;
 `;
