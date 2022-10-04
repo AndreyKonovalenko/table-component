@@ -2,6 +2,7 @@ const theme = {
   colors: {
     background: '#FFFFFF',
     selectionFieldBackground: '#98999E',
+    button: '#BD1CBD',
     table: {
       red: {
         main: '#f55d48',

@@ -62,8 +62,19 @@ export const FlexContainer = styled.div`
 `;
 
 export const Button = styled.button`
-  border-radius: 15%;
-  width: 100%;
-  padding: 10px 15px;
   margin-right: 20px;
+  border-radius: 50px;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px 25px;
+  margin: 2% 0%;
+  background-color: ${(props) => props.color};
+  color: ${({ theme }) => theme.colors.button};
+  &:hover {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
 `;
