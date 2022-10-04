@@ -3,6 +3,7 @@ import { useState } from 'react';
 export const useTableContorls = (data) => {
   const [tableData, setTableData] = useState(data);
   const [filters, setFilters] = useState({ status: 'All', type: 'All' });
+
   const handleFiltering = (accessor, value) => {
     if (value === 'All') {
       setTableData(data);

@@ -6,6 +6,10 @@ import { numberFormatter } from '../utils/utils';
 const TableBody = ({ tableData, columns }) => {
   const theme = useTheme();
 
+  const onRowHandler = (name, id) => {
+    window.location.href = `https://${name}/${id}`;
+  };
+
   const tableBody = tableData.map((data) => {
     const dot = <S.Dot color={theme.colors.table[data.status].main} />;
     const rowsData = columns.map(({ accessor }) => {
@@ -35,7 +39,10 @@ const TableBody = ({ tableData, columns }) => {
     });
 
     return (
-      <S.TR color={theme.colors.table[data.status].light} key={data.id}>
+      <S.TR
+        color={theme.colors.table[data.status].light}
+        key={data.id}
+        onClick={() => onRowHandler(data.name, data.id)}>
         {rowsData}
       </S.TR>
     );

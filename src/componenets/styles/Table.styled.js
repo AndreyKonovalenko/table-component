@@ -33,6 +33,7 @@ export const Span = styled.span`
 
 export const TR = styled.tr`
   background-color: ${(props) => props.color};
+  cursor: pointer;
 `;
 
 export const TD = styled.td`
