@@ -27,7 +27,7 @@ export const data = [
     status: 'green',
     type: 'THC',
     conditions: 'x2,1 years',
-    volume: 120000,
+    volume: 50000,
     roi: 23,
     free: 2,
     hedge: 20,

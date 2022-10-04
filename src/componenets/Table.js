@@ -4,7 +4,8 @@ import TableBody from './TableBody';
 import { useTableContorls } from '../hooks/useTableControls';
 
 const Table = ({ data, columns }) => {
-  const [tableData, filters, handleFiltering] = useTableContorls(data);
+  const [tableData, filters, handleFiltering, handleSorting] =
+    useTableContorls(data);
 
   return (
     <S.Table>
@@ -13,6 +14,7 @@ const Table = ({ data, columns }) => {
         tableData={data}
         handleFiltering={handleFiltering}
         filters={filters}
+        handleSorting={handleSorting}
       />
       <TableBody columns={columns} tableData={tableData} />
     </S.Table>
