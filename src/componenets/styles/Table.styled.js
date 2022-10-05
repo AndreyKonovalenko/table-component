@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const Table = styled.table`
-  width: 100%;
   border-collapse: separate;
   border-spacing: 0 5px;
   table-layout: auto;
+  width: 100%;
 `;
 
 export const TH = styled.th`
@@ -25,11 +25,11 @@ export const THEAD = styled.thead`
 
 export const Span = styled.span`
   background: ${({ theme }) => theme.colors.selectionFieldBackground};
-  color: ${({ theme }) => theme.colors.text.onSelect};
-  padding: 2px 5px;
-  margin-right: 3px;
   border-radius: 3px;
   border: none;
+  color: ${({ theme }) => theme.colors.text.onSelect};
+  margin-right: 3px;
+  padding: 2px 5px;
 `;
 
 export const TR = styled.tr`
@@ -43,36 +43,33 @@ export const TD = styled.td`
 `;
 
 export const TBoby = styled.tbody`
-  font-weight: bold;
   background: #fff;
+  font-weight: bold;
 `;
 
 export const Dot = styled.div`
   background-color: ${(props) => props.color};
   border-radius: 50%;
-  margin-right: 10px;
   height: 14px;
+  margin-right: 10px;
   width: 14px;
 `;
 
 export const FlexContainer = styled.div`
+  align-items: center;
   display: flex;
   justify-content: row;
-  align-items: center;
 `;
 
 export const Button = styled.button`
-  margin-right: 20px;
-  border-radius: 50px;
-  border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  background-color: ${({ bg }) => bg || (({ theme }) => theme.colors.button)};
+  border-radius: 10px;
+  border: 2px solid ${({ theme }) => theme.colors.button};
+  color: ${({ color }) => color || (({ theme }) => theme.colors.button)};
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 10px 25px;
-  margin: 2% 0%;
-  background-color: ${(props) => props.color};
-  color: ${({ theme }) => theme.colors.button};
+  font-weight: bold;
+  margin-right: 20px;
+  padding: 8px 15px;
   &:hover {
     opacity: 0.9;
     transform: scale(0.98);

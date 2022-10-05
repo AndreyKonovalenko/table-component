@@ -1,11 +1,14 @@
+import { useRef } from 'react';
 import { useTheme } from 'styled-components';
+import { useCustomClick } from '../hooks/useCustomClick';
 import * as S from './styles/Table.styled';
 
 import { numberFormatter } from '../utils/utils';
 
-const TableBody = ({ tableData, columns }) => {
+const TableBody = ({ tableData, columns, bought, onBuy }) => {
+  const ref = useRef(null);
   const theme = useTheme();
-
+  useCustomClick(ref);
   const onRowHandler = (name, id) => {
     window.location.href = `https://${name}/${id}`;
   };
@@ -33,17 +36,28 @@ const TableBody = ({ tableData, columns }) => {
           <S.FlexContainer>
             {accessor === 'name' && dot}
             {tData}
-            {accessor === 'button' && <S.Button>Buy</S.Button>}
+            {accessor === 'button' && (
+              <S.Button
+                ref={ref}
+                onClick={() => onBuy(data.id)}
+                bg={
+                  !bought.includes(data.id)
+                    ? theme.colors.table[data.status].light
+                    : null
+                }
+                color={
+                  bought.includes(data.id) ? theme.colors.text.onButton : null
+                }>
+                Buy
+              </S.Button>
+            )}
           </S.FlexContainer>
         </S.TD>
       );
     });
 
     return (
-      <S.TR
-        color={theme.colors.table[data.status].light}
-        key={data.id}
-        onClick={() => onRowHandler(data.name, data.id)}>
+      <S.TR color={theme.colors.table[data.status].light} key={data.id}>
         {rowsData}
       </S.TR>
     );
@@ -53,3 +67,4 @@ const TableBody = ({ tableData, columns }) => {
 };
 
 export default TableBody;
+//onClick={() => onRowHandler(data.name, data.id)}

@@ -20,7 +20,7 @@ const theme = {
     text: {
       main: '#000000',
       onHeader: '#98999E',
-      onButton: '#32CA8',
+      onButton: '#FFFFFF',
       onSelect: '#FFFFFF',
     },
   },
