@@ -8,12 +8,14 @@ const Table = ({ data, columns }) => {
   const [tableData, filters, handleFiltering, handleSorting] =
     useTableContorls(data);
   const [bought, setBought] = useState([]);
-  const onBuy = (id) => {
+  const onBuy = (id, event) => {
     if (!bought.includes(id)) {
       setBought((prevSate) => [...prevSate, id]);
+      event.stopPropagation();
     }
     if (bought.includes(id)) {
       setBought(bought.filter((element) => element !== id));
+      event.stopPropagation();
     }
   };
   return (
