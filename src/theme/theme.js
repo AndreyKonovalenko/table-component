@@ -24,7 +24,6 @@ const theme = {
       onSelect: '#FFFFFF',
     },
   },
-  mobile: '768px',
 };
 
 export default theme;

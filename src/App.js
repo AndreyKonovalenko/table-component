@@ -10,7 +10,6 @@ const columns = [
     label: 'Project',
     accessor: 'name',
     sortable: true,
-    sortbyOrder: 'desc',
   },
   {
     label: 'Token type',
@@ -22,7 +21,7 @@ const columns = [
     accessor: 'conditions',
     sortable: false,
   },
-  { label: 'Volume', accessor: 'volume', sortable: true, sortbyOrder: 'desc' },
+  { label: 'Volume', accessor: 'volume', sortable: true },
   { label: 'ROI', accessor: 'roi', sortable: false },
   { label: 'Free float', accessor: 'free', sortable: false },
   { label: 'Insurance hadge', accessor: 'hedge', sortable: false },

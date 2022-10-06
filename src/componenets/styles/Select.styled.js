@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Select = styled.select`
-  width: 1rem;
   background: ${({ theme }) => theme.colors.backbround};
-  color: ${({ theme }) => theme.colors.text.onHeader};
-  margin-right: 3px;
   border-radius: 3px;
   border: none;
+  color: ${({ theme }) => theme.colors.text.onHeader};
   cursor: pointer;
+  margin-right: 3px;
+  width: 1rem;
 `;

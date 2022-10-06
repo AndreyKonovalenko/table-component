@@ -14,9 +14,9 @@ export const TH = styled.th`
 `;
 
 export const THContainer = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
 `;
 
 export const THEAD = styled.thead`

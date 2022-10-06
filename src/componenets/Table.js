@@ -1,8 +1,8 @@
 import { useState } from 'react';
+import { useTableContorls } from '../hooks/useTableControls';
 import * as S from './styles/Table.styled';
 import TableHead from './TableHead';
 import TableBody from './TableBody';
-import { useTableContorls } from '../hooks/useTableControls';
 
 const Table = ({ data, columns }) => {
   const [tableData, filters, handleFiltering, handleSorting] =
