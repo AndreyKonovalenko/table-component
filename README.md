@@ -43,4 +43,4 @@ Start development server:
 npm start
 ```
 
-You should the running app at http://localhost:3000
+You should see the running app at http://localhost:3000
