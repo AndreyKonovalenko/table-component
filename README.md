@@ -24,7 +24,7 @@ Clone this project by running this command from your terminal:
 git clone https://github.com/AndreyKonovalenko/table-component.git
 ```
 
-Switch incede the project:
+Switch inside the project:
 
 ```
 
