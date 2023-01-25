@@ -5,14 +5,14 @@
 ## Features
 
 - filtering by;
-  - status color;
+  - status colour;
   - token type.
 - sorting by:
   - project name;
   - volume;
 - events:
   - clicking anywhere on each line (except Buy button) cause to jumping to link /project/id;
-  - clicking on button 'buy' changes its color.
+  - clicking on the button 'buy' changes its colour.
 
 ## Installation
 
